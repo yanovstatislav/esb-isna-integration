@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types"
+	xmlns:bons1="http://bip.bee.kz/common/v10/types"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:import namespace="http://bip.bee.kz/common/v10/types"
+		schemaLocation="../../../common/v10/types/MessageStatusInfo.xsd" />
+	<xsd:import namespace="http://bip.bee.kz/common/v10/types"
+		schemaLocation="../../../common/v10/types/MessageState.xsd" />
+	<xsd:complexType name="AsyncGetMessageStatusResponse">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="messageState"
+				type="bons1:MessageState">
+
+				<xsd:annotation><xsd:documentation>состояние сообщения</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="status"
+				type="bons1:MessageStatusInfo">
+				<xsd:annotation><xsd:documentation>Статус сообщения на ШЭП</xsd:documentation></xsd:annotation>
+			</xsd:element>
+
+			<xsd:element minOccurs="1" name="responseDate"
+				type="xsd:dateTime">
+				<xsd:annotation><xsd:documentation>Дата ответа</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="sessionId"
+				type="xsd:string">
+				<xsd:annotation><xsd:documentation>Идентификатор сессии на ШЭП</xsd:documentation></xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

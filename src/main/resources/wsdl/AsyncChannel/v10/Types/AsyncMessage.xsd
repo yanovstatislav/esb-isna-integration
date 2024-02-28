@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types"
+	xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/types"
+	xmlns:bons1="http://bip.bee.kz/common/v10/types"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:include schemaLocation="AsyncMessageInfo.xsd" />
+	<xsd:import namespace="http://bip.bee.kz/common/v10/types"
+		schemaLocation="../../../common/v10/types/MessageData.xsd">
+	</xsd:import>
+	<xsd:complexType name="AsyncMessage">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="messageInfo"
+				type="bons0:AsyncMessageInfo">
+				<xsd:annotation><xsd:documentation>Метаданные сообщения</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="messageData"
+				type="bons1:MessageData">
+				<xsd:annotation><xsd:documentation>Бизнес данные сообщения</xsd:documentation></xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

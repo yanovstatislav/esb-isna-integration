@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types"
+	xmlns:bons0="http://bip.bee.kz/common/v10/types"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:import
+		schemaLocation="../../../common/v10/types/SenderInfo.xsd"
+		namespace="http://bip.bee.kz/common/v10/types">
+	</xsd:import>
+	<xsd:import namespace="http://bip.bee.kz/common/v10/types"
+		schemaLocation="../../../common/v10/types/DeliveryNotification.xsd">
+	</xsd:import>
+	<xsd:complexType name="AsyncSendDeliveryNotificationRequest">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="notification"
+				type="bons0:DeliveryNotification">
+				<xsd:annotation><xsd:documentation>Уведомления о статусе доставки сообщения</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="requestDate"
+				type="xsd:dateTime"><xsd:annotation><xsd:documentation>Дата запроса</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="sender"
+				type="bons0:SenderInfo">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

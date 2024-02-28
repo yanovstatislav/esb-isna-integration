@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bons0="http://bip.bee.kz/common/v10/types">
+
+	<xsd:include schemaLocation="ErrorInfo.xsd"></xsd:include>
+	<xsd:include schemaLocation="MessageStatusInfo.xsd"></xsd:include>
+	<xsd:include schemaLocation="MessageState.xsd"></xsd:include>
+	<xsd:complexType name="ChangeStatusNotification">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="notificationId"
+				type="xsd:string">
+				<xsd:annotation><xsd:documentation>Идентификатор уведомления</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="messageId"
+				type="xsd:string">
+				<xsd:annotation><xsd:documentation>Идентификатор сообщения</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="notificationDate"
+				type="xsd:dateTime">
+				<xsd:annotation><xsd:documentation>Дата создания уведомления</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="messageState"
+				type="bons0:MessageState">
+				<xsd:annotation><xsd:documentation>Состояние сообщения</xsd:documentation></xsd:annotation>
+			</xsd:element>
+
+			<xsd:element minOccurs="1" name="status"
+				type="bons0:MessageStatusInfo">
+				<xsd:annotation><xsd:documentation>Статус сообщения на ШЭП</xsd:documentation></xsd:annotation>
+			</xsd:element>
+
+
+
+			<xsd:element minOccurs="0" name="error"
+				type="bons0:ErrorInfo">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

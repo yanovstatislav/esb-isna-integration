@@ -1,0 +1,79 @@
+version: '3.4'
+
+services:
+#  zookeeper:
+#    image: confluentinc/cp-zookeeper:latest
+#    container_name: zookeeper
+#    hostname: zookeeper
+#    ports:
+#      - "2181:2181"
+#    environment:
+#      ZOOKEEPER_CLIENT_PORT: 2181
+#      ZOOKEEPER_TICK_TIME: 2000
+#
+#  kafka:
+#    image: confluentinc/cp-kafka:latest
+#    container_name: kafka
+#    hostname: kafka
+#    ports:
+#      - "9092:9092"
+#      - "9192:9192"
+#    environment:
+#      KAFKA_BROKER_ID: 1
+#      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+#      KAFKA_ADVERTISED_LISTENERS: LISTENER_DOCKER_INTERNAL://kafka:19092,LISTENER_DOCKER_EXTERNAL://${DOCKER_HOST_IP:-127.0.0.1}:9092
+#      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: LISTENER_DOCKER_INTERNAL:PLAINTEXT,LISTENER_DOCKER_EXTERNAL:PLAINTEXT
+#      KAFKA_INTER_BROKER_LISTENER_NAME: LISTENER_DOCKER_INTERNAL
+#      KAFKA_LOG4J_ROOT_LOGLEVEL: INFO
+#      KAFKA_CONFLUENT_SUPPORT_METRICS_ENABLE: "false"
+#    depends_on:
+#      - zookeeper
+
+#  connect:
+#    image: confluentinc/cp-kafka-connect:latest
+#    container_name: connect
+#    hostname: connect
+#    depends_on:
+#      - zookeeper
+#      - kafka
+#    ports:
+#      - 8083:8083
+#    environment:
+#      CONNECT_BOOTSTRAP_SERVERS: "kafka:19092"
+#      CONNECT_REST_PORT: "8083"
+#      CONNECT_GROUP_ID: "local-connect"
+#      CONNECT_CONFIG_STORAGE_TOPIC: "local-connect-config"
+#      CONNECT_OFFSET_STORAGE_TOPIC: "local-connect-offsets"
+#      CONNECT_STATUS_STORAGE_TOPIC: "local-connect-status"
+#      CONNECT_REPLICATION_FACTOR: 1
+#      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 1
+#      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 1
+#      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
+#      CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+#      CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+#      CONNECT_INTERNAL_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+#      CONNECT_INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+#      CONNECT_REST_ADVERTISED_HOST_NAME: "localhost"
+#      CONNECT_LOG4J_ROOT_LOGLEVEL: "INFO"
+#      CONNECT_PLUGIN_PATH: /usr/share/java/,/etc/kafka-connect/jars
+#    volumes:
+#      - ./amqp/camel-amqp:/etc/kafka-connect/jars/camel-amqp
+#      - ./rabbitmq/camel-rabbitmq-kafka-connector:/etc/kafka-connect/jars/camel-rabbitmq-kafka-connector
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    restart: "no"
+    ports:
+      - "9000:9000"
+    environment:
+      KAFKA_BROKERCONNECT: "localhost:9092"
+
+  rabbitmq:
+    image: rabbitmq:3.8.6-management
+    hostname: rabbit
+    ports:
+    - "5672:5672"
+    - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER:-guest}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS:-guest}

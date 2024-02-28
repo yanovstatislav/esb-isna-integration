@@ -1,0 +1,1721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d728fd76-b997-4b01-b1c0-3f0d5fdbb3e4" activeEnvironment="Default" name="SHEP_ASYNC" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6cc8c108-7fdb-40c8-bf9a-a6f502d06db2" wsaVersion="NONE" name="AsyncChannelClientHttpBinding" type="wsdl" bindingName="{http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client/Binding}AsyncChannelClientHttpBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Interfaces/AsyncChannelClientHttp_Service.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Interfaces/AsyncChannelClientHttp_Service.wsdl"><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Interfaces/AsyncChannelClientHttp_Service.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AsyncChannelClientHttp_Service" targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client/Binding" xmlns:Port_0="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client/Binding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import location="IAsyncChannelClient.wsdl" namespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client"/>
+  <wsdl:binding name="AsyncChannelClientHttpBinding" type="Port_0:IAsyncChannelClient">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendMessage">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="sendMessageRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="sendMessageFault">
+        <soap:fault name="sendMessageFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeMassageStatusNotification">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="changeMassageStatusNotificationRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeMassageStatusNotificationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="changeMassageStatusNotificationFault">
+        <soap:fault name="changeMassageStatusNotificationFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AsyncChannelClientHttpService">
+    <wsdl:port binding="this:AsyncChannelClientHttpBinding" name="AsyncChannelClientHttpPort">
+      <soap:address location="http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelClientService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Interfaces/IAsyncChannelClient.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="IAsyncChannelClient" targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client" xmlns:tns0="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client" xmlns:tns="http://bip.bee.kz/AsyncChannel/v10/Types/Client" xmlns:tns1="http://bip.bee.kz/AsyncChannel/v10/Types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons2="http://bip.bee.kz/common/v10/types">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client">
+      <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/Types/Client" schemaLocation="../Types/IAsyncChannelClient.xsd"/>
+      <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/Types" schemaLocation="../Types/IAsyncChannel.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sendMessageRequestMsg">
+    <wsdl:part element="tns1:sendMessage" name="sendMessageParameters"/>
+  </wsdl:message>
+  <wsdl:message name="sendMessageResponseMsg">
+    <wsdl:part element="tns1:sendMessageResponse" name="sendMessageResult"/>
+  </wsdl:message>
+  <wsdl:message name="sendMessage_sendMessageFaultMsg">
+    <wsdl:part element="tns1:sendMessageFault1_sendMessageFault" name="sendMessageFault"/>
+  </wsdl:message>
+  <wsdl:message name="changeMassageStatusNotificationRequestMsg">
+    <wsdl:part element="tns:changeMassageStatusNotification" name="changeMassageStatusNotificationParameters"/>
+  </wsdl:message>
+  <wsdl:message name="changeMassageStatusNotificationResponseMsg">
+    <wsdl:part element="tns:changeMassageStatusNotificationResponse" name="changeMassageStatusNotificationResult"/>
+  </wsdl:message>
+  <wsdl:message name="changeMassageStatusNotification_changeMassageStatusNotificationFaultMsg">
+    <wsdl:part element="tns:changeMassageStatusNotificationFault1_changeMassageStatusNotificationFault" name="changeMassageStatusNotificationFault"/>
+  </wsdl:message>
+  <wsdl:portType name="IAsyncChannelClient">
+    <wsdl:documentation>Интерфейс для реализации сервиса на стороне клиентов ШЭП для работы с асинхронным каналом.
+Сервис реализуется как на стороне провайдера сервиса, так и на стороне использующей сервис, в случае если во взаимодействии требуется что бы ШЭП доставлял сообщения методом вызова сервиса получателя сообщения (PUSH)</wsdl:documentation>
+    <wsdl:operation name="sendMessage">
+      <wsdl:documentation>Метод приема сообщений</wsdl:documentation>
+      <wsdl:input message="tns0:sendMessageRequestMsg" name="sendMessageRequest"/>
+      <wsdl:output message="tns0:sendMessageResponseMsg" name="sendMessageResponse"/>
+      <wsdl:fault message="tns0:sendMessage_sendMessageFaultMsg" name="sendMessageFault">
+        <wsdl:documentation>Объект ошибки при обработке запроса</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeMassageStatusNotification">
+      <wsdl:documentation>Метод приема уведомлений об изменении статуса сообщения в ШЭП</wsdl:documentation>
+      <wsdl:input message="tns0:changeMassageStatusNotificationRequestMsg" name="changeMassageStatusNotificationRequest"/>
+      <wsdl:output message="tns0:changeMassageStatusNotificationResponseMsg" name="changeMassageStatusNotificationResponse"/>
+      <wsdl:fault message="tns0:changeMassageStatusNotification_changeMassageStatusNotificationFaultMsg" name="changeMassageStatusNotificationFault">
+        <wsdl:documentation>Объект ошибки при обработке запроса</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/IAsyncChannelClient.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Types/Client" xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons2="http://bip.bee.kz/common/v10/types">
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendMessageResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendMessageRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncChangeStatusNotifyResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncChangeStatusNotifyRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/ErrorInfo.xsd"/>
+  <xsd:element name="sendMessage">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons0:AsyncSendMessageRequest">
+          <xsd:annotation>
+            <xsd:documentation>Объект запроса</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendMessageResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons0:AsyncSendMessageResponse">
+          <xsd:annotation>
+            <xsd:documentation>Объект ответа</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendMessageFault1_sendMessageFault" nillable="true" type="bons2:ErrorInfo"/>
+  <xsd:element name="changeMassageStatusNotification">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons0:AsyncChangeStatusNotifyRequest">
+          <xsd:annotation>
+            <xsd:documentation>Объект запроса</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="changeMassageStatusNotificationResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons0:AsyncChangeStatusNotifyResponse">
+          <xsd:annotation>
+            <xsd:documentation>Объект ответа</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="changeMassageStatusNotificationFault1_changeMassageStatusNotificationFault" nillable="true" type="bons2:ErrorInfo"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncSendMessageResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:complexType name="AsyncSendMessageResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="correlationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификато цепочки сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/Guid.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="guid">
+    <xs:annotation>
+      <xs:documentation>Оисание типа данных guid</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncSendMessageRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons1="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="AsyncMessageInfo.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/MessageData.xsd"></xsd:import>
+  <xsd:complexType name="AsyncSendMessageRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageInfo" type="bons0:AsyncMessageInfo">
+        <xsd:annotation>
+          <xsd:documentation>Мета данные сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageData" type="bons1:MessageData">
+        <xsd:annotation>
+          <xsd:documentation>Бизнес-данне сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/MessageData.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="MessageData">
+    <xsd:annotation>
+      <xsd:documentation>Структура для передачи бизнес данных сообщения</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="data" type="xsd:anyType">
+        <xsd:annotation>
+          <xsd:documentation>Объект бизнес данные сообщения (формат определяется системой получателя сообщения)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncMessageInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:bons1="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Property.xsd"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/SenderInfo.xsd"></xsd:import>
+  <xsd:complexType name="AsyncMessageInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения.
+Идентификатор сообщения генерируется ШЭП. Поэтому в случает отправки сообщения на ШЭП данное поле должно быть пустым. В случае когда сообщение передается получателю номер будет проставлен ШЭП.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="correlationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор цепочки сообщений. Генерируется ШЭП. Поэтому в случает отправки сообщения типа REQUEST на ШЭП данное поле должно быть пустым. При отправке сообщений других типов на ШЭП, данное поле ДОЛЖНО БЫТЬ ЗАПОЛНЕНО. В случае когда сообщение передается получателю номер будет проставлен ШЭП.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="serviceId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор взаимодействия. По реестру сервисов ШЭП.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageType">
+        <xsd:annotation>
+          <xsd:documentation>Тип сообщения:
+REQUEST - первое сообщения взаимодействия
+UPDATE - сообщения обновление данных
+NOTIFICATION - сообщение уведомление
+RESPONSE - сообщение ответ</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="REQUEST"/>
+            <xsd:enumeration value="NOTIFICATION"/>
+            <xsd:enumeration value="UPDATE"/>
+            <xsd:enumeration value="RESPONSE"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="routeId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор маршрута</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата создания сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <!--<xsd:element minOccurs="0" name="SenderCorrelationId" type="xsd:string">
+				<xsd:annotation>
+				<xsd:documentation>Идентификатор цепочки сообщения в системе отправителя</xsd:documentation>
+				</xsd:annotation>
+				</xsd:element>-->
+      <xsd:element minOccurs="1" name="sender" type="bons0:SenderInfo"></xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="properties" type="bons0:Property">
+        <xsd:annotation>
+          <xsd:documentation>Массив дополнительных своиств сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии ШЭП. Заполняется на ШЭП, отправителю заполнять не надо.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/Property.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="Property">
+    <xsd:annotation>
+      <xsd:documentation>Тип данных своиство.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="key">
+        <xsd:annotation>
+          <xsd:documentation>Ключ своиства</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="0"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="value">
+        <xsd:annotation>
+          <xsd:documentation>Значение своиства</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="500"/>
+            <xsd:minLength value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/SenderInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="SenderInfo">
+    <xsd:annotation>
+      <xsd:documentation>Структура данных информации об отправителе</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="senderId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор отправителя (системы отправителя)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="password" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Пароль отправителя</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncChangeStatusNotifyResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:complexType name="AsyncChangeStatusNotifyResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии(то что пришло в запросе)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncChangeStatusNotifyRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/ChangeStatusNotification.xsd"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:complexType name="AsyncChangeStatusNotifyRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="notification" type="bons0:ChangeStatusNotification">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор уведомления</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="requestDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/ChangeStatusNotification.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://bip.bee.kz/common/v10/types">
+  <xsd:include schemaLocation="ErrorInfo.xsd"/>
+  <xsd:include schemaLocation="MessageStatusInfo.xsd"/>
+  <xsd:include schemaLocation="MessageState.xsd"/>
+  <xsd:complexType name="ChangeStatusNotification">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="notificationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор уведомления</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="notificationDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата создания уведомления</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageState" type="bons0:MessageState">
+        <xsd:annotation>
+          <xsd:documentation>Состояние сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="status" type="bons0:MessageStatusInfo">
+        <xsd:annotation>
+          <xsd:documentation>Статус сообщения на ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="error" type="bons0:ErrorInfo"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/ErrorInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://bip.bee.kz/common/v10/types">
+  <xsd:include schemaLocation="Guid.xsd"/>
+  <xsd:complexType name="ErrorInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="errorCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Код ошибки</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="errorMessage" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Сообщение ошибки</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="errorData" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Дополнительное описание ошибки</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="errorDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ошибки</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="subError" type="bons0:ErrorInfo">
+        <xsd:annotation>
+          <xsd:documentation>Дочерняя ошибка</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии в которой произошла ошибка</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/MessageStatusInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="MessageStatusInfo">
+    <xsd:annotation>
+      <xsd:documentation>Код статуса</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="statusCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Код статуса сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="statusMessage" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Сообщения статуса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="statusDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата изменеия статуса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/MessageState.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="MessageState">
+    <xsd:annotation>
+      <xsd:documentation>состояние сообщения
+ON_DELIVERY - в процессе доставки
+DELIVERED - доставлено
+NOT_DELIVERED - не доставлено
+DELIVERY_STOPPED - доставка остановлена</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ON_DELIVERY"/>
+      <xsd:enumeration value="DELIVERED"/>
+      <xsd:enumeration value="NOT_DELIVERED"/>
+      <xsd:enumeration value="DELIVERY_STOPPED"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/IAsyncChannel.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Types" xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/Interfaces" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons3="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons2="http://bip.bee.kz/common/v10/types">
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendMessageResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendMessageRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendDeliveryNotificationResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendDeliveryNotificationRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncGetMessageStatusResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncGetMessageStatusRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncGetMessagesResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncGetMessagesRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/ErrorInfo.xsd"/>
+  <xsd:element name="sendMessage">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons3:AsyncSendMessageRequest">
+          <xsd:annotation>
+            <xsd:documentation>Запрос</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendMessageResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons3:AsyncSendMessageResponse">
+          <xsd:annotation>
+            <xsd:documentation>Ответ</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendDeliveryNotification">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons3:AsyncSendDeliveryNotificationRequest">
+          <xsd:annotation>
+            <xsd:documentation>Запрос</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendDeliveryNotificationResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons3:AsyncSendDeliveryNotificationResponse">
+          <xsd:annotation>
+            <xsd:documentation>Ответ</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getMessageStatus">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons3:AsyncGetMessageStatusRequest">
+          <xsd:annotation>
+            <xsd:documentation>Запрос</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getMessageStatusResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons3:AsyncGetMessageStatusResponse">
+          <xsd:annotation>
+            <xsd:documentation>Ответ</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendMessageFault1_sendMessageFault" nillable="true" type="bons2:ErrorInfo"/>
+  <xsd:element name="sendDeliveryNotificationFault1_sendDeliveryNotificationFault" nillable="true" type="bons2:ErrorInfo"/>
+  <xsd:element name="getMessageStatusFault1_getMessageStatusFault" nillable="true" type="bons2:ErrorInfo"/>
+  <xsd:element name="getMessages">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons3:AsyncGetMessagesRequest">
+          <xsd:annotation>
+            <xsd:documentation>Запрос</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getMessagesResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons3:AsyncGetMessagesResponse">
+          <xsd:annotation>
+            <xsd:documentation>Ответ</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getMessagesFault1_getMessagesFault" nillable="true" type="bons2:ErrorInfo"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncSendDeliveryNotificationResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:complexType name="AsyncSendDeliveryNotificationResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="notificationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncSendDeliveryNotificationRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../../../common/v10/types/SenderInfo.xsd" namespace="http://bip.bee.kz/common/v10/types"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/DeliveryNotification.xsd"></xsd:import>
+  <xsd:complexType name="AsyncSendDeliveryNotificationRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="notification" type="bons0:DeliveryNotification">
+        <xsd:annotation>
+          <xsd:documentation>Уведомления о статусе доставки сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="requestDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sender" type="bons0:SenderInfo"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/DeliveryNotification.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="DeliveryStatusInfo.xsd"/>
+  <xsd:complexType name="DeliveryNotification">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="serviceId" type="xsd:string"></xsd:element>
+      <xsd:element minOccurs="1" name="notificationDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата создания уведомления</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="deliveryStatus" type="bons0:DeliveryStatusInfo">
+        <xsd:annotation>
+          <xsd:documentation>статус доставки(привема сообщения)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/DeliveryStatusInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="ErrorInfo.xsd"/>
+  <xsd:complexType name="DeliveryStatusInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="receiveStatus">
+        <xsd:annotation>
+          <xsd:documentation>Стаус доставки сообщения:
+MESSAGE_NOT_ACCTEPTED - сообщения не принято
+MESSAGE_ACCEPTED - сообщения принято</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="MESSAGE_ACCEPTED"/>
+            <xsd:enumeration value="MESSAGE_NOT_ACCTEPTED"></xsd:enumeration>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="statusDate" type="xsd:dateTime"></xsd:element>
+      <xsd:element minOccurs="1" name="resendMessage">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RESEND"/>
+            <xsd:enumeration value="NOT_RESEND"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="error" type="bons0:ErrorInfo"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncGetMessageStatusResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons1="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/MessageStatusInfo.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/MessageState.xsd"/>
+  <xsd:complexType name="AsyncGetMessageStatusResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageState" type="bons1:MessageState">
+        <xsd:annotation>
+          <xsd:documentation>состояние сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="status" type="bons1:MessageStatusInfo">
+        <xsd:annotation>
+          <xsd:documentation>Статус сообщения на ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sessionId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии на ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncGetMessageStatusRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Property.xsd"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/SenderInfo.xsd"></xsd:import>
+  <xsd:complexType name="AsyncGetMessageStatusRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="requestDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="sender" type="bons0:SenderInfo">
+        <xsd:annotation>
+          <xsd:documentation>Информация об отправителе запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="properties" type="bons0:Property" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>Массив своиств запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncGetMessagesResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:bons1="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="AsyncMessage.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:complexType name="AsyncGetMessagesResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="messages" type="bons1:AsyncMessage">
+        <xsd:annotation>
+          <xsd:documentation>Массив сообщений</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncMessage.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons1="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="AsyncMessageInfo.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/MessageData.xsd"></xsd:import>
+  <xsd:complexType name="AsyncMessage">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageInfo" type="bons0:AsyncMessageInfo">
+        <xsd:annotation>
+          <xsd:documentation>Метаданные сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageData" type="bons1:MessageData">
+        <xsd:annotation>
+          <xsd:documentation>Бизнес данные сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncGetMessagesRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Property.xsd"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/SenderInfo.xsd"></xsd:import>
+  <xsd:complexType name="AsyncGetMessagesRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения, можно не вводить</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="correlationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор цепочки сообщения, можно не вводить</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="requestDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="serviceId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сервиса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sender" type="bons0:SenderInfo">
+        <xsd:annotation>
+          <xsd:documentation>Информация об отправителе</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="amount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Максимальное кол-во сообщений в выборке.
+Если данное поле отсутствует в запросе или равно 0 то будет принято настроеное на ШЭПе значение</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="properties" type="bons0:Property">
+        <xsd:annotation>
+          <xsd:documentation>Массив своиств запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelClientService</con:endpoint></con:endpoints><con:operation id="bb1f1414-dc6d-470c-9a4b-599c5563d452" isOneWay="false" action="" name="changeMassageStatusNotification" bindingOperationName="changeMassageStatusNotification" type="Request-Response" outputName="changeMassageStatusNotificationResponse" inputName="changeMassageStatusNotificationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fd683cbf-8eaf-4563-884b-f5b46f8d7ec2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelClientService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cli="http://bip.bee.kz/AsyncChannel/v10/Types/Client">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cli:changeMassageStatusNotification>
+         <request>
+            <notification>
+               <notificationId>?</notificationId>
+               <messageId>?</messageId>
+               <notificationDate>?</notificationDate>
+               <messageState>?</messageState>
+               <status>
+                  <statusCode>?</statusCode>
+                  <statusMessage>?</statusMessage>
+                  <statusDate>?</statusDate>
+               </status>
+               <!--Optional:-->
+               <error>
+                  <errorCode>?</errorCode>
+                  <errorMessage>?</errorMessage>
+                  <!--Optional:-->
+                  <errorData>?</errorData>
+                  <errorDate>?</errorDate>
+                  <!--Optional:-->
+                  <subError/>
+                  <!--Optional:-->
+                  <sessionId>?</sessionId>
+               </error>
+            </notification>
+            <requestDate>?</requestDate>
+            <!--Optional:-->
+            <sessionId>?</sessionId>
+         </request>
+      </cli:changeMassageStatusNotification>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client/Binding/IAsyncChannelClient/changeMassageStatusNotificationRequest"/></con:call></con:operation><con:operation id="2a2b174c-37ad-4681-be02-c88537d78d5f" isOneWay="false" action="" name="sendMessage" bindingOperationName="sendMessage" type="Request-Response" outputName="sendMessageResponse" inputName="sendMessageRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ca30299a-7452-4a16-b5df-aaf3643c13fa" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelClientService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://bip.bee.kz/AsyncChannel/v10/Types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:sendMessage>
+         <request>
+            <messageInfo>
+               <!--Optional:-->
+               <messageId>?</messageId>
+               <!--Optional:-->
+               <correlationId>?</correlationId>
+               <serviceId>?</serviceId>
+               <messageType>?</messageType>
+               <!--Optional:-->
+               <routeId>?</routeId>
+               <messageDate>?</messageDate>
+               <sender>
+                  <senderId>?</senderId>
+                  <!--Optional:-->
+                  <password>?</password>
+               </sender>
+               <!--Zero or more repetitions:-->
+               <properties>
+                  <key>?</key>
+                  <value>?</value>
+               </properties>
+               <!--Optional:-->
+               <sessionId>?</sessionId>
+            </messageInfo>
+            <messageData>
+               <data>?</data>
+            </messageData>
+         </request>
+      </typ:sendMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Client/Binding/IAsyncChannelClient/sendMessageRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="14439c5b-763f-4f2c-b8c5-fc4173f1c79f" wsaVersion="NONE" name="AsyncChannelHttpBinding" type="wsdl" bindingName="{http://bip.bee.kz/AsyncChannel/v10/Interfaces/Binding}AsyncChannelHttpBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Interfaces/AsyncChannelHttp_Service.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Interfaces/AsyncChannelHttp_Service.wsdl"><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Interfaces/AsyncChannelHttp_Service.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AsyncChannelHttp_Service" targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Binding" xmlns:Port_0="http://bip.bee.kz/AsyncChannel/v10/Interfaces" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:this="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Binding" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import location="IAsyncChannel.wsdl" namespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces"/>
+  <wsdl:binding name="AsyncChannelHttpBinding" type="Port_0:IAsyncChannel">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sendMessage">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="sendMessageRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendMessageResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="sendMessageFault">
+        <soap:fault name="sendMessageFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="sendDeliveryNotification">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="sendDeliveryNotificationRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sendDeliveryNotificationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="sendDeliveryNotificationFault">
+        <soap:fault name="sendDeliveryNotificationFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageStatus">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getMessageStatusRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="getMessageStatusFault">
+        <soap:fault name="getMessageStatusFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessages">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getMessagesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessagesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="getMessagesFault">
+        <soap:fault name="getMessagesFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AsyncChannelHttpService">
+    <wsdl:port binding="this:AsyncChannelHttpBinding" name="AsyncChannelHttpPort">
+      <soap:address location="http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Interfaces/IAsyncChannel.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="IAsyncChannel_N" targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces" xmlns:tns0="http://bip.bee.kz/AsyncChannel/v10/Interfaces" xmlns:bons0="http://TypesLib/AsyncChannel/v10/Interface/IAsyncChannel_N" xmlns:bons2="http://bip.bee.kz/common/v10/types" xmlns:bons3="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:tns="http://bip.bee.kz/AsyncChannel/v10/Types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Interfaces">
+      <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/Types" schemaLocation="../Types/IAsyncChannel.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="sendMessageRequestMsg">
+    <wsdl:part element="tns:sendMessage" name="sendMessageParameters"/>
+  </wsdl:message>
+  <wsdl:message name="sendMessageResponseMsg">
+    <wsdl:part element="tns:sendMessageResponse" name="sendMessageResult"/>
+  </wsdl:message>
+  <wsdl:message name="sendDeliveryNotificationRequestMsg">
+    <wsdl:part element="tns:sendDeliveryNotification" name="sendDeliveryNotificationParameters"/>
+  </wsdl:message>
+  <wsdl:message name="sendDeliveryNotificationResponseMsg">
+    <wsdl:part element="tns:sendDeliveryNotificationResponse" name="sendDeliveryNotificationResult"/>
+  </wsdl:message>
+  <wsdl:message name="getMessageStatusRequestMsg">
+    <wsdl:part element="tns:getMessageStatus" name="getMessageStatusParameters"/>
+  </wsdl:message>
+  <wsdl:message name="getMessageStatusResponseMsg">
+    <wsdl:part element="tns:getMessageStatusResponse" name="getMessageStatusResult"/>
+  </wsdl:message>
+  <wsdl:message name="sendMessage_sendMessageFaultMsg">
+    <wsdl:part element="tns:sendMessageFault1_sendMessageFault" name="sendMessageFault"/>
+  </wsdl:message>
+  <wsdl:message name="sendDeliveryNotification_sendDeliveryNotificationFaultMsg">
+    <wsdl:part element="tns:sendDeliveryNotificationFault1_sendDeliveryNotificationFault" name="sendDeliveryNotificationFault"/>
+  </wsdl:message>
+  <wsdl:message name="getMessageStatus_getMessageStatusFaultMsg">
+    <wsdl:part element="tns:getMessageStatusFault1_getMessageStatusFault" name="getMessageStatusFault"/>
+  </wsdl:message>
+  <wsdl:message name="getMessagesRequestMsg">
+    <wsdl:part element="tns:getMessages" name="getMessagesParameters"/>
+  </wsdl:message>
+  <wsdl:message name="getMessagesResponseMsg">
+    <wsdl:part element="tns:getMessagesResponse" name="getMessagesResult"/>
+  </wsdl:message>
+  <wsdl:message name="getMessages_getMessagesFaultMsg">
+    <wsdl:part element="tns:getMessagesFault1_getMessagesFault" name="getMessagesFault"/>
+  </wsdl:message>
+  <wsdl:portType name="IAsyncChannel">
+    <wsdl:documentation>Интерфейс сервиса на ШЭП, для работы с асинхронным каналом</wsdl:documentation>
+    <wsdl:operation name="sendMessage">
+      <wsdl:documentation>Метод для отправки сообщений на асинхронный канал ШЭП</wsdl:documentation>
+      <wsdl:input message="tns0:sendMessageRequestMsg" name="sendMessageRequest"/>
+      <wsdl:output message="tns0:sendMessageResponseMsg" name="sendMessageResponse"/>
+      <wsdl:fault message="tns0:sendMessage_sendMessageFaultMsg" name="sendMessageFault">
+        <wsdl:documentation>Ошибка</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="sendDeliveryNotification">
+      <wsdl:documentation>Метод отправки уведомления на ШЭП о доставке или не доставке сообщения н</wsdl:documentation>
+      <wsdl:input message="tns0:sendDeliveryNotificationRequestMsg" name="sendDeliveryNotificationRequest"/>
+      <wsdl:output message="tns0:sendDeliveryNotificationResponseMsg" name="sendDeliveryNotificationResponse"/>
+      <wsdl:fault message="tns0:sendDeliveryNotification_sendDeliveryNotificationFaultMsg" name="sendDeliveryNotificationFault">
+        <wsdl:documentation>Ошибка</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageStatus">
+      <wsdl:documentation>Метод получения статуса сообщения с ШЭП</wsdl:documentation>
+      <wsdl:input message="tns0:getMessageStatusRequestMsg" name="getMessageStatusRequest"/>
+      <wsdl:output message="tns0:getMessageStatusResponseMsg" name="getMessageStatusResponse"/>
+      <wsdl:fault message="tns0:getMessageStatus_getMessageStatusFaultMsg" name="getMessageStatusFault">
+        <wsdl:documentation>Ошибка</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMessages">
+      <wsdl:documentation>Метод выборки сообщений с ШЭП по следующим параметрам:
+-идентификатору сообщения+получателю(только для запрасившего)+идентификатору сервиса
+-идентификатору цепочки сообщений+получателю(только для запрасившего)+идентификатору сервиса
+-получателю(только для запрасившего)+идентификатору сервиса</wsdl:documentation>
+      <wsdl:input message="tns0:getMessagesRequestMsg" name="getMessagesRequest"/>
+      <wsdl:output message="tns0:getMessagesResponseMsg" name="getMessagesResponse"/>
+      <wsdl:fault message="tns0:getMessages_getMessagesFaultMsg" name="getMessagesFault">
+        <wsdl:documentation>ошибка</wsdl:documentation>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/IAsyncChannel.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/Types" xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/Interfaces" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons3="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons2="http://bip.bee.kz/common/v10/types">
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendMessageResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendMessageRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendDeliveryNotificationResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncSendDeliveryNotificationRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncGetMessageStatusResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncGetMessageStatusRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncGetMessagesResponse.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/AsyncChannel/v10/types" schemaLocation="AsyncGetMessagesRequest.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/ErrorInfo.xsd"/>
+  <xsd:element name="sendMessage">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons3:AsyncSendMessageRequest">
+          <xsd:annotation>
+            <xsd:documentation>Запрос</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendMessageResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons3:AsyncSendMessageResponse">
+          <xsd:annotation>
+            <xsd:documentation>Ответ</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendDeliveryNotification">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons3:AsyncSendDeliveryNotificationRequest">
+          <xsd:annotation>
+            <xsd:documentation>Запрос</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendDeliveryNotificationResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons3:AsyncSendDeliveryNotificationResponse">
+          <xsd:annotation>
+            <xsd:documentation>Ответ</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getMessageStatus">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons3:AsyncGetMessageStatusRequest">
+          <xsd:annotation>
+            <xsd:documentation>Запрос</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getMessageStatusResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons3:AsyncGetMessageStatusResponse">
+          <xsd:annotation>
+            <xsd:documentation>Ответ</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="sendMessageFault1_sendMessageFault" nillable="true" type="bons2:ErrorInfo"/>
+  <xsd:element name="sendDeliveryNotificationFault1_sendDeliveryNotificationFault" nillable="true" type="bons2:ErrorInfo"/>
+  <xsd:element name="getMessageStatusFault1_getMessageStatusFault" nillable="true" type="bons2:ErrorInfo"/>
+  <xsd:element name="getMessages">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="request" nillable="true" type="bons3:AsyncGetMessagesRequest">
+          <xsd:annotation>
+            <xsd:documentation>Запрос</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getMessagesResponse">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="response" nillable="true" type="bons3:AsyncGetMessagesResponse">
+          <xsd:annotation>
+            <xsd:documentation>Ответ</xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+  <xsd:element name="getMessagesFault1_getMessagesFault" nillable="true" type="bons2:ErrorInfo"/>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncSendMessageResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:complexType name="AsyncSendMessageResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="correlationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификато цепочки сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/Guid.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="guid">
+    <xs:annotation>
+      <xs:documentation>Оисание типа данных guid</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\{[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}\}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncSendMessageRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons1="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="AsyncMessageInfo.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/MessageData.xsd"></xsd:import>
+  <xsd:complexType name="AsyncSendMessageRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageInfo" type="bons0:AsyncMessageInfo">
+        <xsd:annotation>
+          <xsd:documentation>Мета данные сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageData" type="bons1:MessageData">
+        <xsd:annotation>
+          <xsd:documentation>Бизнес-данне сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/MessageData.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="MessageData">
+    <xsd:annotation>
+      <xsd:documentation>Структура для передачи бизнес данных сообщения</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="data" type="xsd:anyType">
+        <xsd:annotation>
+          <xsd:documentation>Объект бизнес данные сообщения (формат определяется системой получателя сообщения)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncMessageInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:bons1="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Property.xsd"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/SenderInfo.xsd"></xsd:import>
+  <xsd:complexType name="AsyncMessageInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения.
+Идентификатор сообщения генерируется ШЭП. Поэтому в случает отправки сообщения на ШЭП данное поле должно быть пустым. В случае когда сообщение передается получателю номер будет проставлен ШЭП.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="correlationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор цепочки сообщений. Генерируется ШЭП. Поэтому в случает отправки сообщения типа REQUEST на ШЭП данное поле должно быть пустым. При отправке сообщений других типов на ШЭП, данное поле ДОЛЖНО БЫТЬ ЗАПОЛНЕНО. В случае когда сообщение передается получателю номер будет проставлен ШЭП.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="serviceId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор взаимодействия. По реестру сервисов ШЭП.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageType">
+        <xsd:annotation>
+          <xsd:documentation>Тип сообщения:
+REQUEST - первое сообщения взаимодействия
+UPDATE - сообщения обновление данных
+NOTIFICATION - сообщение уведомление
+RESPONSE - сообщение ответ</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="REQUEST"/>
+            <xsd:enumeration value="NOTIFICATION"/>
+            <xsd:enumeration value="UPDATE"/>
+            <xsd:enumeration value="RESPONSE"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="routeId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор маршрута</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата создания сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <!--<xsd:element minOccurs="0" name="SenderCorrelationId" type="xsd:string">
+				<xsd:annotation>
+				<xsd:documentation>Идентификатор цепочки сообщения в системе отправителя</xsd:documentation>
+				</xsd:annotation>
+				</xsd:element>-->
+      <xsd:element minOccurs="1" name="sender" type="bons0:SenderInfo"></xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="properties" type="bons0:Property">
+        <xsd:annotation>
+          <xsd:documentation>Массив дополнительных своиств сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии ШЭП. Заполняется на ШЭП, отправителю заполнять не надо.</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/Property.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="Property">
+    <xsd:annotation>
+      <xsd:documentation>Тип данных своиство.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="key">
+        <xsd:annotation>
+          <xsd:documentation>Ключ своиства</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:minLength value="0"/>
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="value">
+        <xsd:annotation>
+          <xsd:documentation>Значение своиства</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="500"/>
+            <xsd:minLength value="0"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/SenderInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="SenderInfo">
+    <xsd:annotation>
+      <xsd:documentation>Структура данных информации об отправителе</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="senderId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор отправителя (системы отправителя)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="password" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Пароль отправителя</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncSendDeliveryNotificationResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:complexType name="AsyncSendDeliveryNotificationResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="notificationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncSendDeliveryNotificationRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import schemaLocation="../../../common/v10/types/SenderInfo.xsd" namespace="http://bip.bee.kz/common/v10/types"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/DeliveryNotification.xsd"></xsd:import>
+  <xsd:complexType name="AsyncSendDeliveryNotificationRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="notification" type="bons0:DeliveryNotification">
+        <xsd:annotation>
+          <xsd:documentation>Уведомления о статусе доставки сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="requestDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sender" type="bons0:SenderInfo"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/DeliveryNotification.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="DeliveryStatusInfo.xsd"/>
+  <xsd:complexType name="DeliveryNotification">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="serviceId" type="xsd:string"></xsd:element>
+      <xsd:element minOccurs="1" name="notificationDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата создания уведомления</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="deliveryStatus" type="bons0:DeliveryStatusInfo">
+        <xsd:annotation>
+          <xsd:documentation>статус доставки(привема сообщения)</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/DeliveryStatusInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="ErrorInfo.xsd"/>
+  <xsd:complexType name="DeliveryStatusInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="receiveStatus">
+        <xsd:annotation>
+          <xsd:documentation>Стаус доставки сообщения:
+MESSAGE_NOT_ACCTEPTED - сообщения не принято
+MESSAGE_ACCEPTED - сообщения принято</xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="MESSAGE_ACCEPTED"/>
+            <xsd:enumeration value="MESSAGE_NOT_ACCTEPTED"></xsd:enumeration>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="statusDate" type="xsd:dateTime"></xsd:element>
+      <xsd:element minOccurs="1" name="resendMessage">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RESEND"/>
+            <xsd:enumeration value="NOT_RESEND"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="error" type="bons0:ErrorInfo"></xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/ErrorInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bons0="http://bip.bee.kz/common/v10/types">
+  <xsd:include schemaLocation="Guid.xsd"/>
+  <xsd:complexType name="ErrorInfo">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="errorCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Код ошибки</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="errorMessage" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Сообщение ошибки</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="errorData" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Дополнительное описание ошибки</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="errorDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ошибки</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="subError" type="bons0:ErrorInfo">
+        <xsd:annotation>
+          <xsd:documentation>Дочерняя ошибка</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии в которой произошла ошибка</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncGetMessageStatusResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons1="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/MessageStatusInfo.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/MessageState.xsd"/>
+  <xsd:complexType name="AsyncGetMessageStatusResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageState" type="bons1:MessageState">
+        <xsd:annotation>
+          <xsd:documentation>состояние сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="status" type="bons1:MessageStatusInfo">
+        <xsd:annotation>
+          <xsd:documentation>Статус сообщения на ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sessionId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии на ШЭП</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/MessageStatusInfo.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:complexType name="MessageStatusInfo">
+    <xsd:annotation>
+      <xsd:documentation>Код статуса</xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="statusCode" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Код статуса сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="statusMessage" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Сообщения статуса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="statusDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата изменеия статуса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/common/v10/types/MessageState.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:simpleType name="MessageState">
+    <xsd:annotation>
+      <xsd:documentation>состояние сообщения
+ON_DELIVERY - в процессе доставки
+DELIVERED - доставлено
+NOT_DELIVERED - не доставлено
+DELIVERY_STOPPED - доставка остановлена</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="ON_DELIVERY"/>
+      <xsd:enumeration value="DELIVERED"/>
+      <xsd:enumeration value="NOT_DELIVERED"/>
+      <xsd:enumeration value="DELIVERY_STOPPED"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncGetMessageStatusRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Property.xsd"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/SenderInfo.xsd"></xsd:import>
+  <xsd:complexType name="AsyncGetMessageStatusRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="requestDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="sender" type="bons0:SenderInfo">
+        <xsd:annotation>
+          <xsd:documentation>Информация об отправителе запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="properties" type="bons0:Property" maxOccurs="unbounded">
+        <xsd:annotation>
+          <xsd:documentation>Массив своиств запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncGetMessagesResponse.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:bons1="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="AsyncMessage.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Guid.xsd"></xsd:import>
+  <xsd:complexType name="AsyncGetMessagesResponse">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="responseDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата ответа</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="sessionId" type="bons0:guid">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сессии</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="messages" type="bons1:AsyncMessage">
+        <xsd:annotation>
+          <xsd:documentation>Массив сообщений</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncMessage.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons1="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="AsyncMessageInfo.xsd"/>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/MessageData.xsd"></xsd:import>
+  <xsd:complexType name="AsyncMessage">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="messageInfo" type="bons0:AsyncMessageInfo">
+        <xsd:annotation>
+          <xsd:documentation>Метаданные сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="messageData" type="bons1:MessageData">
+        <xsd:annotation>
+          <xsd:documentation>Бизнес данные сообщения</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/alimjan/Downloads/Telegram%20Desktop/bip-java-sdk-1.0-SNAPSHOT/wsdl/AsyncChannel/v10/Types/AsyncGetMessagesRequest.xsd</con:url><con:content><![CDATA[<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types" xmlns:bons0="http://bip.bee.kz/common/v10/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/Property.xsd"></xsd:import>
+  <xsd:import namespace="http://bip.bee.kz/common/v10/types" schemaLocation="../../../common/v10/types/SenderInfo.xsd"></xsd:import>
+  <xsd:complexType name="AsyncGetMessagesRequest">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="messageId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сообщения, можно не вводить</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="correlationId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор цепочки сообщения, можно не вводить</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="requestDate" type="xsd:dateTime">
+        <xsd:annotation>
+          <xsd:documentation>Дата запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="1" name="serviceId" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation>Идентификатор сервиса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="sender" type="bons0:SenderInfo">
+        <xsd:annotation>
+          <xsd:documentation>Информация об отправителе</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="amount" type="xsd:int">
+        <xsd:annotation>
+          <xsd:documentation>Максимальное кол-во сообщений в выборке.
+Если данное поле отсутствует в запросе или равно 0 то будет принято настроеное на ШЭПе значение</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="properties" type="bons0:Property">
+        <xsd:annotation>
+          <xsd:documentation>Массив своиств запроса</xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://127.0.0.1:8181/eis)</con:endpoint><con:endpoint>http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelService</con:endpoint></con:endpoints><con:operation id="8ddf5818-d602-4f0d-8419-fc23ff717474" isOneWay="false" action="" name="getMessages" bindingOperationName="getMessages" type="Request-Response" outputName="getMessagesResponse" inputName="getMessagesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f2920ee2-6e0f-4c2c-82b9-8d80fc439e50" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://bip.bee.kz/AsyncChannel/v10/Types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:getMessages>
+         <request>
+            <!--Optional:-->
+            <messageId>?</messageId>
+            <!--Optional:-->
+            <correlationId>?</correlationId>
+            <!--Optional:-->
+            <requestDate>?</requestDate>
+            <serviceId>?</serviceId>
+            <!--Optional:-->
+            <sender>
+               <senderId>?</senderId>
+               <!--Optional:-->
+               <password>?</password>
+            </sender>
+            <!--Optional:-->
+            <amount>?</amount>
+            <!--Zero or more repetitions:-->
+            <properties>
+               <key>?</key>
+               <value>?</value>
+            </properties>
+         </request>
+      </typ:getMessages>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Binding/IAsyncChannel/getMessagesRequest"/></con:call></con:operation><con:operation id="50003f57-d040-4a6d-846b-ca0dcd300ab9" isOneWay="false" action="" name="getMessageStatus" bindingOperationName="getMessageStatus" type="Request-Response" outputName="getMessageStatusResponse" inputName="getMessageStatusRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="59a8907e-521b-4193-9242-ef4f3ab308ee" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://bip.bee.kz/AsyncChannel/v10/Types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:getMessageStatus>
+         <request>
+            <messageId>?</messageId>
+            <requestDate>?</requestDate>
+            <sender>
+               <senderId>?</senderId>
+               <!--Optional:-->
+               <password>?</password>
+            </sender>
+            <!--Zero or more repetitions:-->
+            <properties>
+               <key>?</key>
+               <value>?</value>
+            </properties>
+         </request>
+      </typ:getMessageStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Binding/IAsyncChannel/getMessageStatusRequest"/></con:call></con:operation><con:operation id="b79950a6-67ba-4277-829d-1740b669ed08" isOneWay="false" action="" name="sendDeliveryNotification" bindingOperationName="sendDeliveryNotification" type="Request-Response" outputName="sendDeliveryNotificationResponse" inputName="sendDeliveryNotificationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="94d139bf-042e-4a08-9e05-8248cf47aee5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://bip.bee.kz/AsyncChannel/v10/Types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:sendDeliveryNotification>
+         <request>
+            <notification>
+               <messageId>?</messageId>
+               <serviceId>?</serviceId>
+               <notificationDate>?</notificationDate>
+               <deliveryStatus>
+                  <receiveStatus>?</receiveStatus>
+                  <statusDate>?</statusDate>
+                  <resendMessage>?</resendMessage>
+                  <!--Optional:-->
+                  <error>
+                     <errorCode>?</errorCode>
+                     <errorMessage>?</errorMessage>
+                     <!--Optional:-->
+                     <errorData>?</errorData>
+                     <errorDate>?</errorDate>
+                     <!--Optional:-->
+                     <subError/>
+                     <!--Optional:-->
+                     <sessionId>?</sessionId>
+                  </error>
+               </deliveryStatus>
+            </notification>
+            <requestDate>?</requestDate>
+            <!--Optional:-->
+            <sender>
+               <senderId>?</senderId>
+               <!--Optional:-->
+               <password>?</password>
+            </sender>
+         </request>
+      </typ:sendDeliveryNotification>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Binding/IAsyncChannel/sendDeliveryNotificationRequest"/></con:call></con:operation><con:operation id="7a1bc223-2901-4b93-84b7-46c813642edd" isOneWay="false" action="" name="sendMessage" bindingOperationName="sendMessage" type="Request-Response" outputName="sendMessageResponse" inputName="sendMessageRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="232cd72f-7e94-47ea-9943-587b42b80076" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://127.0.0.1:8181/eis</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://bip.bee.kz/AsyncChannel/v10/Types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:sendMessage>
+         <request>
+            <messageInfo>
+               <messageId></messageId>
+               <correlationId></correlationId>
+               <serviceId>TEST_EIS_ASYNC_SENT_DIRECT</serviceId>
+               <messageType>REQUEST</messageType>
+               <messageDate>2002-05-30T09:30:10-06:00</messageDate>
+               <sender>
+                  <senderId>TEST</senderId>
+                  <password>TEST</password>
+               </sender>
+            </messageInfo>
+            <messageData>
+               <data><messageEnvelope xmlns="http://payments.bee.kz/Gateway/KgdEnvelope"
+            >
+            <message>
+              PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPG5vdGlmaWNhdGlvblBheW1lbnQgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM9Imh0dHA6Ly9wYXltZW50cy5iZWUua3ovR2F0ZXdheU5rTm90aWZpY2F0aW9uIj4KICA8cmVmZXJlbmNlPkIxMDAwMjU4MDc1NjIyPC9yZWZlcmVuY2U+CiAgPGJhbmtSZWZlcmVuY2U+MDQ0ODk1NDQyMjc3PC9iYW5rUmVmZXJlbmNlPgogIDxwYXlEYXRlPjIwMjItMTItMDc8L3BheURhdGU+CiAgPGRvY0RhdGU+MjAyMi0xMC0xNzwvZG9jRGF0ZT4KICA8YW1vdW50PjM2NDYuMjU8L2Ftb3VudD4KICA8cGF5ZXJJZG4+OTYwNjIzNDUxMzM0PC9wYXllcklkbj4KICA8cGF5ZXJOYW1lPtCc0KPQoNCX0JDQm9CY0J3QntCS0JAg0prQq9Cc0JHQkNCiINCU0KvQndCc0KPQpdCQ0JzQkdCV0KLQntCS0J3QkDwvcGF5ZXJOYW1lPgogIDxiYW5rSWRuPjk3MTI0MDAwMTMxNTwvYmFua0lkbj4KICA8YmFua0Jpaz5IU0JLS1pLWDwvYmFua0Jpaz4KICA8YmFua05hbWU+0JDQniDQndCQ0KDQntCU0J3Qq9CZINCR0JDQndCaPC9iYW5rTmFtZT4KICA8dHJlYXN1cnlJZG4+MTkwMjQwMDAwMDkzPC90cmVhc3VyeUlkbj4KICA8dHJlYXN1cnlOYW1lPtCg0JPQoyDQo9CT0JQg0L/QviDQkNC60LrQvtC70YzRgdC60L7QvNGDINGA0LDQudC+0L3RgzwvdHJlYXN1cnlOYW1lPgogIDxrbm8+MDMwMjAxPC9rbm8+CiAgPGtucD45MTE8L2tucD4KICA8dm8+MDE8L3ZvPgogIDxrYms+MTA4MTI1PC9rYms+CiAgPGRvY051bWJlcj4zNDk8L2RvY051bWJlcj4KICA8YXNzaWduPtCd0LDRh9C40YHQu9C10L3QvdGL0LUgKNC40YHRh9C40YHQu9C10L3QvdGL0LUpINC4INC40L3Ri9C1INC+0LHRj9C30LDRgtC10LvRjNGB0YLQstCwINCyINCx0Y7QtNC20LXRgjwvYXNzaWduPgo8ZHM6U2lnbmF0dXJlIHhtbG5zOmRzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjIiBJZD0iMSI+CjxkczpTaWduZWRJbmZvPgo8ZHM6Q2Fub25pY2FsaXphdGlvbk1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnL1RSLzIwMDEvUkVDLXhtbC1jMTRuLTIwMDEwMzE1Ii8+CjxkczpTaWduYXR1cmVNZXRob2QgQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNnb3N0MzQzMTAtZ29zdDM0MzExIi8+CjxkczpSZWZlcmVuY2UgVVJJPSIiPgo8ZHM6VHJhbnNmb3Jtcz4KPGRzOlRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyNlbnZlbG9wZWQtc2lnbmF0dXJlIi8+CjxkczpUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy14bWwtYzE0bi0yMDAxMDMxNSNXaXRoQ29tbWVudHMiLz4KPC9kczpUcmFuc2Zvcm1zPgo8ZHM6RGlnZXN0TWV0aG9kIEFsZ29yaXRobT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxkc2lnLW1vcmUjZ29zdDM0MzExIi8+CjxkczpEaWdlc3RWYWx1ZT5CZ3ptY2gzb01kamNPZWYrVG5nSHhuZmw2ZUd2bHozWm9CbFM5TitnSE5zPTwvZHM6RGlnZXN0VmFsdWU+CjwvZHM6UmVmZXJlbmNlPgo8L2RzOlNpZ25lZEluZm8+CjxkczpTaWduYXR1cmVWYWx1ZT5jWXE0b2VsLzkwRTJ3VkR0RmVXNUdZZ3R4RnhnYk9yM0JDaFVGaS8rQXF1MWM0TzUxaUNOWXZWVFBadVA3M0RkClU1NjNQNExJQjVQMVpBaUMxWHo3SEE9PTwvZHM6U2lnbmF0dXJlVmFsdWU+CjxkczpLZXlJbmZvPgo8ZHM6WDUwOURhdGE+CjxkczpYNTA5Q2VydGlmaWNhdGU+TUlJRWdEQ0NCQ3FnQXdJQkFnSVVFZzFHQ2pyaStJbSs1WmppTFRFSlMybnBKYVV3RFFZSktvTU9Bd29CQVFFQwpCUUF3VXpFTE1Ba0dBMVVFQmhNQ1Mxb3hSREJDQmdOVkJBTU1POUt3MEp2UW90Q2kwS3ZTbWlEUW10Q2owNWpRCm05Q1EwSjNRbE5DcjBLRFFvOUNvMEtzZzBKN1FvTkNpMEpEUW05Q3IwcG9nS0VkUFUxUXBNQjRYRFRJeU1UQXcKTkRBME1USXdOVm9YRFRJek1UQXdOREEwTVRJd05Wb3dnZ0VxTVJrd0Z3WURWUVFFREJEUW10Q2UwSjNRcjlDbwowSnJRbU5DZE1Td3dLZ1lEVlFRRERDUFFtdENlMEozUXI5Q28wSnJRbU5DZElOQ2cwSjdRb2RDaTBKalFvZENiCjBKRFFrakVZTUJZR0ExVUVCUk1QU1VsT09Ea3dPVEEwTXpBd09UWTNNUXN3Q1FZRFZRUUdFd0pMV2pFWU1CWUcKQTFVRUN3d1BRa2xPTURBd056UXdNREF3TnpJNE1SOHdIUVlEVlFRcURCYlFrTkNkMEpEUW90Q2UwSnZRck5DVgowSkxRbU5Dbk1YMHdld1lEVlFRS0RIVFFrTkNhMEtiUW1OQ2UwSjNRbGRDZzBKM1FudENWSU5DZTBKSFFxZENWCjBLSFFvdENTMEo0Z0l0Q2QwSkRRcHRDWTBKN1FuZENRMEp2UXJOQ2QwS3ZRbFNEUW1OQ2QwS1RRbnRDZzBKelEKa05DbTBKalFudENkMEozUXE5Q1ZJTkNpMEpYUXBkQ2QwSjdRbTlDZTBKUFFtTkNZSWpCc01DVUdDU3FERGdNSwpBUUVCQVRBWUJnb3FndzREQ2dFQkFRRUJCZ29xZ3c0RENnRURBUUVBQTBNQUJFRGJuTmp5V2xyRkd5ZHVVUExoClpLajNFZ0xDZ2hnVXdjeW1qeGV3WGlzWU5NL3NCald2ci9nUlRMQURyOUQ0dWQxd0JSMzBQaUxJUmNtS0Vwa20Kd21hSm80SUI2ekNDQWVjd0RnWURWUjBQQVFIL0JBUURBZ2JBTUNnR0ExVWRKUVFoTUI4R0NDc0dBUVVGQndNRQpCZ2dxZ3c0REF3UUJBZ1lKS29NT0F3TUVBUUlCTUE4R0ExVWRJd1FJTUFhQUJGdHFjK2t3SFFZRFZSME9CQllFCkZFbzNsbHNRbE1EMWtQNTVzRUgxQTk0RElVM1lNRjRHQTFVZElBUlhNRlV3VXdZSEtvTU9Bd01DQVRCSU1DRUcKQ0NzR0FRVUZCd0lCRmhWb2RIUndPaTh2Y0d0cExtZHZkaTVyZWk5amNITXdJd1lJS3dZQkJRVUhBZ0l3Rnd3VgphSFIwY0RvdkwzQnJhUzVuYjNZdWEzb3ZZM0J6TUZnR0ExVWRId1JSTUU4d1RhQkxvRW1HSW1oMGRIQTZMeTlqCmNtd3VjR3RwTG1kdmRpNXJlaTl1WTJGZloyOXpkQzVqY215R0kyaDBkSEE2THk5amNtd3hMbkJyYVM1bmIzWXUKYTNvdmJtTmhYMmR2YzNRdVkzSnNNRndHQTFVZExnUlZNRk13VWFCUG9FMkdKR2gwZEhBNkx5OWpjbXd1Y0d0cApMbWR2ZGk1cmVpOXVZMkZmWkY5bmIzTjBMbU55YklZbGFIUjBjRG92TDJOeWJERXVjR3RwTG1kdmRpNXJlaTl1ClkyRmZaRjluYjNOMExtTnliREJqQmdnckJnRUZCUWNCQVFSWE1GVXdMd1lJS3dZQkJRVUhNQUtHSTJoMGRIQTYKTHk5d2Eya3VaMjkyTG10NkwyTmxjblF2Ym1OaFgyZHZjM1F1WTJWeU1DSUdDQ3NHQVFVRkJ6QUJoaFpvZEhSdwpPaTh2YjJOemNDNXdhMmt1WjI5MkxtdDZNQTBHQ1NxRERnTUtBUUVCQWdVQUEwRUF5TmFha0c4TmFZUW5DRklGClV1Q0NwWFNtTDlycWNNR1I4SjVsV2w4c0RhdE9wZVBlMUVMY1JOMTRIMHEzTFk2THJ4ZkhvbDBBbGlkV0lLTXYKL0t5MDdBPT08L2RzOlg1MDlDZXJ0aWZpY2F0ZT4KPC9kczpYNTA5RGF0YT4KPC9kczpLZXlJbmZvPgo8L2RzOlNpZ25hdHVyZT48L25vdGlmaWNhdGlvblBheW1lbnQ+Cg==
+            </message>
+          </messageEnvelope></data>
+            </messageData>
+         </request>
+      </typ:sendMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://bip.bee.kz/AsyncChannel/v10/Interfaces/Binding/IAsyncChannel/sendMessageRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="4e15de92-47dc-4ccf-853e-fa26c74b142c" name="TestSuite 1"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="75697272-9fc8-4a24-9128-b9720b4304ff" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="mockresponse" name="sendMessage" id="997270bf-57eb-479c-8e66-a60ff6bebb18"><con:settings/><con:config xsi:type="con:MockResponseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AsyncChannelHttpBinding</con:interface><con:operation>sendMessage</con:operation><con:path>/sendMessage</con:path><con:port>8181</con:port><con:response id="c7353e9f-4820-41fa-9a3e-2348200b87fb"><con:settings/><con:responseContent xsi:nil="true"/><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response></con:config></con:testStep><con:testStep type="mockresponse" name="sendMessage 1" id="9d5f3675-5951-47fd-a418-51288b6828bc"><con:settings/><con:config xsi:type="con:MockResponseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AsyncChannelHttpBinding</con:interface><con:operation>sendMessage</con:operation><con:path>/sendMessage</con:path><con:port>8181</con:port><con:response id="1b91f79b-4bca-461b-a698-50c73a132621"><con:settings/><con:responseContent>${#MockResponse#Request}</con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="54234f91-15dd-4410-b485-6385e9155656" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 2" searchProperties="true"><con:settings/><con:testStep type="request" name="SOAP Request" id="f6c3e26c-9482-4bdc-acca-53c747d7c4d3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AsyncChannelClientHttpBinding</con:interface><con:operation>sendMessage</con:operation><con:request name="SOAP Request" id="84bc9148-f03e-4c27-8049-d0eddf053d1a"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9080/SerrviceSampleTypesWeb/sca/AsyncChannelClientService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://bip.bee.kz/AsyncChannel/v10/Types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:sendMessage>
+         <request>
+            <messageInfo>
+               <serviceId>?</serviceId>
+               <messageType>?</messageType>
+               <messageDate>?</messageDate>
+               <sender>
+                  <senderId>?</senderId>
+               </sender>
+            </messageInfo>
+            <messageData>
+               <data>?</data>
+            </messageData>
+         </request>
+      </typ:sendMessage>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="d83b0530-5ed7-4067-904a-27e4cb26f0ab"/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="mockresponse" name="sendMessage" id="d1d17d36-9d12-4ef9-89e9-370f3cee6c7f"><con:settings/><con:config xsi:type="con:MockResponseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>AsyncChannelHttpBinding</con:interface><con:operation>sendMessage</con:operation><con:path>/sendMessage</con:path><con:port>8181</con:port><con:response id="bfc6dbc9-9571-472a-b5ba-68e3a1f62703"><con:settings/><con:responseContent/><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:response><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:typ="http://bip.bee.kz/AsyncChannel/v10/Types">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <typ:sendMessageResponse>
+         <response>
+            <messageId>?</messageId>
+            <correlationId>?</correlationId>
+            <responseDate>?</responseDate>
+            <!--Optional:-->
+            <sessionId>?</sessionId>
+         </response>
+      </typ:sendMessageResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent></con:response><con:assertion type="Schema Compliance" id="544db0b1-f024-475b-830f-786bfddc1f75"><con:configuration/></con:assertion></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

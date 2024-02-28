@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="http://bip.bee.kz/AsyncChannel/v10/types"
+	xmlns:bons0="http://bip.bee.kz/common/v10/types"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:import namespace="http://bip.bee.kz/common/v10/types"
+		schemaLocation="../../../common/v10/types/Property.xsd">
+	</xsd:import>
+	<xsd:import namespace="http://bip.bee.kz/common/v10/types"
+		schemaLocation="../../../common/v10/types/SenderInfo.xsd">
+	</xsd:import>
+	<xsd:complexType name="AsyncGetMessageStatusRequest">
+		<xsd:sequence>
+			<xsd:element minOccurs="1" name="messageId"
+				type="xsd:string">
+				<xsd:annotation><xsd:documentation>Идентификатор сообщения</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="requestDate"
+				type="xsd:dateTime">
+				<xsd:annotation><xsd:documentation>Дата запроса</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="1" name="sender"
+				type="bons0:SenderInfo">
+				<xsd:annotation><xsd:documentation>Информация об отправителе запроса</xsd:documentation></xsd:annotation>
+			</xsd:element>
+			<xsd:element minOccurs="0" name="properties"
+				type="bons0:Property" maxOccurs="unbounded">
+				<xsd:annotation><xsd:documentation>Массив своиств запроса</xsd:documentation></xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>
