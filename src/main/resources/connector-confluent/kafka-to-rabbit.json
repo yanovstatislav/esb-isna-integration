@@ -1,0 +1,18 @@
+{
+  "name" : "RabbitMQSinkConnector",
+  "config" : {
+    "connector.class" : "io.confluent.connect.rabbitmq.sink.RabbitMQSinkConnector",
+    "tasks.max" : "1",
+    "confluent.topic.bootstrap.servers" : "localhost:9092",
+    "topics" : "IN_BT_PEP_INIS_READNOTIFICATION",
+    "rabbitmq.host" : "localhost",
+    "rabbitmq.port" : "5672",
+    "rabbitmq.username" : "guest",
+    "rabbitmq.password" : "guest",
+    "rabbitmq.exchange" : "IN_BT_PEP_INIS_READNOTIFICATION.exchange",
+    "rabbitmq.routing.key" : "esb",
+    "rabbitmq.delivery.mode" : "PERSISTENT",
+    "key.converter" : "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter" : "org.apache.kafka.connect.converters.ByteArrayConverter"
+  }
+}

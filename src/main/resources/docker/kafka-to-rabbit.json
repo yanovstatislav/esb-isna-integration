@@ -1,16 +1,15 @@
 {
   "name": "kafka-to-rabbit-connector",
   "config": {
-    "connector.class": "org.apache.camel.kafkaconnector.amqp.CamelAmqpSinkConnector",
+    "connector.class": "org.apache.camel.kafkaconnector.rabbitmq.CamelRabbitmqSinkConnector",
     "topics": "IN_BT_PEP_INIS_READNOTIFICATION",
-    "tasks.max": "1",
-    "camel.sink.path.destinationType": "queue",
-    "camel.sink.path.destinationName": "IN_BT_PEP_INIS_READNOTIFICATION.queue",
-    "camel.component.amqp.includeAmqpAnnotations": "true",
-    "camel.component.amqp.connectionFactory": "class:org.apache.qpid.jms.JmsConnectionFactory",
-    "camel.component.amqp.connectionFactory.remoteURI": "amqp://localhost:5672",
-    "camel.component.amqp.username":"guest",
-    "camel.component.amqp.password":"guest",
-    "camel.component.amqp.testConnectionOnStartup":"true"
+    "key.converter" : "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter" : "org.apache.kafka.connect.storage.StringConverter",
+"    camel.sink.path.exchangeName" : "IN_BT_PEP_INIS_READNOTIFICATION.exchange",
+    "camel.component.rabbitmq.connectionFactory": "class:org.apache.qpid.jms.JmsConnectionFactory",
+    "camel.component.rabbitmq.addresses": "localhost:5672",
+    "camel.component.rabbitmq.username":"guest",
+    "camel.component.rabbitmqp.password":"guest",
+    "camel.component.rabbitmq.autoDetectConnectionFactory":"true"
   }
 }

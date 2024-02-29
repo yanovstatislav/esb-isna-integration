@@ -1,0 +1,16 @@
+{
+  "name": "kafka-to-aqmp-connector",
+  "config": {
+    "connector.class": "org.apache.camel.kafkaconnector.amqp.CamelAmqpSinkConnector",
+    "topics": "IN_BT_PEP_INIS_READNOTIFICATION",
+    "tasks.max": "1",
+    "camel.sink.path.destinationType": "queue",
+    "camel.sink.path.destinationName": "IN_BT_PEP_INIS_READNOTIFICATION.queue",
+    "camel.component.amqp.includeAmqpAnnotations": "true",
+    "camel.component.amqp.connectionFactory": "class:org.apache.qpid.jms.JmsConnectionFactory",
+    "camel.component.amqp.connectionFactory.remoteURI": "amqp://localhost:5672",
+    "camel.component.amqp.username":"guest",
+    "camel.component.amqp.password":"guest",
+    "camel.component.amqp.testConnectionOnStartup":"true"
+  }
+}
